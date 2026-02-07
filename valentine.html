@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a0a14">
+  <title>بعيد الحب 💝</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-main: 'Tajawal', sans-serif;
+      --font-poetic: 'Aref Ruqaa', serif;
+      
+      /* ألوان عيد الحب */
+      --red: #e53935;
+      --red-deep: #c62828;
+      --red-glow: rgba(229,57,53,.6);
+      --pink: #ec407a;
+      --pink-soft: #f48fb1;
+      --pink-glow: rgba(236,64,122,.5);
+      --rose: #ff4081;
+      --magenta: #d81b60;
+      --coral: #ff6b6b;
+      --gold: #ffd700;
+      --gold-soft: #ffe082;
+      --gold-glow: rgba(255,215,0,.4);
+      --white: #fff;
+      --cream: #fff8f0;
+      
+      /* خلفيات */
+      --ink: #1a0a14;
+      --deep: #0d0508;
+      --wine: #2d0a1a;
+      
+      --ease: cubic-bezier(.4, 0, .2, 1);
+      --ease-out: cubic-bezier(0, 0, .2, 1);
+      --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+      --safeTop: env(safe-area-inset-top, 0px);
+      --safeBottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--ink);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    /* ===== GATE - بوابة عيد الحب ===== */
+    .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: grid;
+      place-items: center;
+      background: 
+        radial-gradient(ellipse at 50% 30%, rgba(229,57,53,.15), transparent 50%),
+        radial-gradient(ellipse at 30% 70%, rgba(236,64,122,.1), transparent 50%),
+        linear-gradient(180deg, var(--wine), var(--ink), var(--deep));
+      backdrop-filter: blur(20px);
+      transition: all 1s var(--ease);
+      overflow: hidden;
+    }
+
+    .gate::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='hearts' patternUnits='userSpaceOnUse' width='50' height='50'%3E%3Ctext x='25' y='30' text-anchor='middle' font-size='12' fill='%23ff4081' opacity='0.08'%3E♥%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hearts)'/%3E%3C/svg%3E");
+      animation: heartPattern 30s linear infinite;
+    }
+
+    @keyframes heartPattern {
+      to { background-position: 50px 50px; }
+    }
+
+    .gate.hide {
+      opacity: 0;
+      transform: scale(1.2);
+      pointer-events: none;
+    }
+
+    /* قلوب متطايرة في البوابة */
+    .gate-hearts {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .gate-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: .4;
+      animation: floatHeart 8s ease-in-out infinite;
+    }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      25% { transform: translateY(-30px) rotate(10deg) scale(1.1); }
+      50% { transform: translateY(-10px) rotate(-5deg) scale(1); }
+      75% { transform: translateY(-40px) rotate(15deg) scale(1.05); }
+    }
+
+    .gate-card {
+      position: relative;
+      text-align: center;
+      padding: 50px 45px;
+      border-radius: 30px;
+      background: 
+        linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.02)),
+        rgba(45,10,26,.8);
+      border: 2px solid rgba(255,64,129,.3);
+      box-shadow: 
+        0 50px 100px rgba(0,0,0,.6),
+        0 0 100px rgba(229,57,53,.2),
+        inset 0 0 60px rgba(255,64,129,.05);
+      backdrop-filter: blur(20px);
+    }
+
+    .gate-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, var(--red), var(--magenta));
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(229,57,53,.4);
+    }
+
+    .gate-icon {
+      font-size: 5rem;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 30px var(--red-glow));
+      animation: heartBeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.1); }
+    }
+
+    .gate-title {
+      font-family: var(--font-poetic);
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      color: var(--pink-soft);
+      margin-bottom: 10px;
+    }
+
+    .gate-name {
+      font-family: var(--font-poetic);
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      background: linear-gradient(135deg, var(--white), var(--pink-soft), var(--gold-soft), var(--white));
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+      animation: nameShine 4s linear infinite;
+      text-shadow: 0 0 60px var(--pink-glow);
+    }
+
+    @keyframes nameShine {
+      to { background-position: 300% center; }
+    }
+
+    .gate-subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 30px;
+    }
+
+    .gate-btn {
+      padding: 20px 50px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-main);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--red), var(--magenta), var(--pink));
+      background-size: 200% auto;
+      box-shadow: 
+        0 20px 50px rgba(229,57,53,.5),
+        0 0 30px rgba(236,64,122,.3);
+      transition: all .4s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gate-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+      transform: translateX(-100%);
+      transition: transform .6s;
+    }
+
+    .gate-btn:hover {
+      background-position: right center;
+      transform: translateY(-3px);
+      box-shadow: 
+        0 25px 60px rgba(229,57,53,.6),
+        0 0 50px rgba(236,64,122,.4);
+    }
+
+    .gate-btn:hover::before { transform: translateX(100%); }
+    .gate-btn:active { transform: scale(.98); }
+
+    /* ===== MAIN SECTIONS ===== */
+    main {
+      height: 100dvh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      overscroll-behavior: contain;
+    }
+
+    body.locked main {
+      overflow: hidden;
+      filter: blur(20px) saturate(1.5);
+    }
+
+    section {
+      height: 100dvh;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    /* ===== SHARED ELEMENTS ===== */
+    .grain {
+      position: absolute;
+      inset: -50%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.4'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 20%, rgba(26,10,20,.8) 100%);
+      pointer-events: none;
+      z-index: 90;
+    }
+
+    .text-wrap {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 80;
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    .verse {
+      font-family: var(--font-poetic);
+      font-size: clamp(1.8rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(50px) scale(.95);
+      transition: all 1.2s var(--ease-out);
+      text-shadow: 
+        0 0 40px var(--red-glow),
+        0 0 80px rgba(236,64,122,.3),
+        0 10px 60px rgba(0,0,0,.8);
+      color: var(--white);
+    }
+
+    section.active .verse {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .beloved { color: var(--gold); }
+
+    /* قلوب خلفية لكل السكاشن */
+    .bg-hearts {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-heart {
+      position: absolute;
+      color: var(--red);
+      opacity: 0;
+    }
+
+    section.active .bg-heart {
+      animation: bgHeartFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes bgHeartFloat {
+      0%, 100% { opacity: .1; transform: translateY(0) scale(1); }
+      50% { opacity: .2; transform: translateY(-30px) scale(1.1); }
+    }
+
+    /* ========================================
+       SECTION 1: بعيد الحب ابكتب لك
+       سيناريو: تقويم + يد تكتب رسالة
+    ======================================== */
+    #sec1 {
+      background: 
+        radial-gradient(ellipse at 50% 30%, rgba(229,57,53,.2), transparent 50%),
+        radial-gradient(ellipse at 30% 80%, rgba(255,215,0,.08), transparent 40%),
+        linear-gradient(180deg, var(--wine), var(--ink), var(--deep));
+    }
+
+    .valentine-scene {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* التقويم */
+    .calendar {
+      position: relative;
+      width: 160px;
+      height: 180px;
+      perspective: 1000px;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: all 1s var(--ease-bounce);
+    }
+
+    #sec1.active .calendar {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .calendar-body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, var(--red), var(--red-deep));
+      border-radius: 20px;
+      box-shadow: 
+        0 30px 60px rgba(0,0,0,.5),
+        0 0 40px var(--red-glow),
+        inset 0 2px 0 rgba(255,255,255,.2);
+      overflow: hidden;
+    }
+
+    .calendar-header {
+      background: rgba(0,0,0,.2);
+      padding: 12px;
+      text-align: center;
+      font-weight: 800;
+      font-size: .9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .calendar-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 50px);
+      padding: 10px;
+    }
+
+    .calendar-day {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      text-shadow: 0 4px 15px rgba(0,0,0,.3);
+    }
+
+    .calendar-label {
+      font-size: .85rem;
+      color: rgba(255,255,255,.8);
+      margin-top: 5px;
+    }
+
+    .calendar-hearts {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.2rem;
+      animation: calHeartPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes calHeartPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* ورقة الرسالة */
+    .letter-paper {
+      position: relative;
+      width: min(320px, 85vw);
+      min-height: 180px;
+      background: linear-gradient(180deg, #fffef8, #f5f0e6);
+      border-radius: 8px;
+      padding: 25px 30px;
+      box-shadow: 
+        0 20px 50px rgba(0,0,0,.4),
+        0 0 0 1px rgba(0,0,0,.05);
+      transform: rotate(-2deg);
+      opacity: 0;
+      transition: all 1s var(--ease) .3s;
+    }
+
+    #sec1.active .letter-paper {
+      opacity: 1;
+      transform: rotate(-2deg) translateY(0);
+    }
+
+    .letter-lines {
+      position: absolute;
+      inset: 60px 20px 20px;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 28px,
+        #d4e4ed 28px,
+        #d4e4ed 29px
+      );
+    }
+
+    .letter-text {
+      font-family: var(--font-poetic);
+      font-size: 1.3rem;
+      color: #2c1810;
+      line-height: 29px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .writing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: #2c1810;
+      margin-right: 2px;
+      animation: cursorBlink 1s step-end infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .letter-heart {
+      position: absolute;
+      bottom: 15px;
+      left: 25px;
+      font-size: 1.5rem;
+      color: var(--red);
+      opacity: 0;
+      transform: scale(0);
+      transition: all .5s var(--ease-bounce) 2s;
+    }
+
+    #sec1.active .letter-heart {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ========================================
+       SECTION 2: واسمعك الذي فاتك
+       سيناريو: سماعات + موجات صوتية
+    ======================================== */
+    #sec2 {
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(236,64,122,.15), transparent 50%),
+        linear-gradient(180deg, var(--ink), var(--wine), var(--deep));
+    }
+
+    .audio-scene {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .headphones {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      opacity: 0;
+      transform: scale(.8);
+      transition: all 1s var(--ease-bounce);
+    }
+
+    #sec2.active .headphones {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* شكل السماعات */
+    .hp-band {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 60px;
+      border: 8px solid var(--pink);
+      border-bottom: none;
+      border-radius: 60px 60px 0 0;
+      box-shadow: 0 0 30px var(--pink-glow);
+    }
+
+    .hp-ear {
+      position: absolute;
+      bottom: 20px;
+      width: 55px;
+      height: 70px;
+      background: linear-gradient(180deg, var(--pink), var(--magenta));
+      border-radius: 15px;
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,.4),
+        inset 0 2px 0 rgba(255,255,255,.3);
+    }
+
+    .hp-ear.left { left: 10px; }
+    .hp-ear.right { right: 10px; }
+
+    .hp-ear::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      background: rgba(0,0,0,.3);
+      border-radius: 10px;
+    }
+
+    /* موجات صوتية */
+    .sound-waves {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+      height: 80px;
+    }
+
+    .wave-bar {
+      width: 8px;
+      background: linear-gradient(180deg, var(--gold), var(--pink));
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity .5s var(--ease);
+    }
+
+    #sec2.active .wave-bar {
+      opacity: 1;
+      animation: waveAnim 1s ease-in-out infinite;
+    }
+
+    @keyframes waveAnim {
+      0%, 100% { height: 20px; }
+      50% { height: var(--h, 60px); }
+    }
+
+    .wave-bar:nth-child(1) { --h: 40px; animation-delay: 0s; }
+    .wave-bar:nth-child(2) { --h: 65px; animation-delay: .1s; }
+    .wave-bar:nth-child(3) { --h: 50px; animation-delay: .2s; }
+    .wave-bar:nth-child(4) { --h: 75px; animation-delay: .15s; }
+    .wave-bar:nth-child(5) { --h: 55px; animation-delay: .25s; }
+    .wave-bar:nth-child(6) { --h: 70px; animation-delay: .1s; }
+    .wave-bar:nth-child(7) { --h: 45px; animation-delay: .2s; }
+
+    /* ========================================
+       SECTION 3: واتكلم واشرحلك
+       سيناريو: فقاعات كلام متعددة
+    ======================================== */
+    #sec3 {
+      background: 
+        radial-gradient(ellipse at 40% 40%, rgba(255,215,0,.1), transparent 50%),
+        linear-gradient(180deg, var(--deep), var(--ink), var(--wine));
+    }
+
+    .speech-scene {
+      position: relative;
+      width: min(350px, 90vw);
+      height: min(350px, 90vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .speech-bubble {
+      position: absolute;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 15px 25px;
+      font-size: 1.5rem;
+      opacity: 0;
+      transform: scale(0);
+      transition: all .8s var(--ease-bounce);
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 30px;
+      width: 20px;
+      height: 20px;
+      background: inherit;
+      border: inherit;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+    }
+
+    #sec3.active .speech-bubble {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .bubble-1 { top: 10%; left: 10%; animation-delay: 0s; }
+    .bubble-2 { top: 25%; right: 5%; animation-delay: .2s; }
+    .bubble-3 { top: 50%; left: 5%; animation-delay: .4s; }
+    .bubble-4 { bottom: 25%; right: 10%; animation-delay: .6s; }
+
+    #sec3.active .bubble-1 { transition-delay: 0s; }
+    #sec3.active .bubble-2 { transition-delay: .2s; }
+    #sec3.active .bubble-3 { transition-delay: .4s; }
+    #sec3.active .bubble-4 { transition-delay: .6s; }
+
+    /* أيقونة الشخص المتكلم */
+    .speaker-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 0 30px var(--pink-glow));
+      opacity: 0;
+      transform: scale(.5);
+      transition: all 1s var(--ease-bounce) .3s;
+    }
+
+    #sec3.active .speaker-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ========================================
+       SECTION 4: حكاية عاشها كلبي
+       سيناريو: قلب مفتوح كالكتاب + صفحات
+    ======================================== */
+    #sec4 {
+      background: 
+        radial-gradient(ellipse at 50% 40%, rgba(229,57,53,.2), transparent 50%),
+        linear-gradient(180deg, var(--wine), var(--deep));
+    }
+
+    .heart-book-scene {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heart-book {
+      position: relative;
+      width: 250px;
+      height: 220px;
+      perspective: 1000px;
+      opacity: 0;
+      transition: all 1s var(--ease);
+    }
+
+    #sec4.active .heart-book {
+      opacity: 1;
+    }
+
+    .book-heart {
+      position: absolute;
+      font-size: 12rem;
+      color: var(--red);
+      filter: drop-shadow(0 0 50px var(--red-glow));
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: bookHeartGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes bookHeartGlow {
+      0%, 100% { filter: drop-shadow(0 0 50px var(--red-glow)); }
+      50% { filter: drop-shadow(0 0 80px var(--red-glow)) drop-shadow(0 0 100px rgba(255,215,0,.3)); }
+    }
+
+    /* صفحات متطايرة */
+    .story-pages {
+      position: absolute;
+      inset: -50px;
+    }
+
+    .story-page {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      background: linear-gradient(135deg, #fff, #f5f0e6);
+      border-radius: 3px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.3);
+      opacity: 0;
+    }
+
+    #sec4.active .story-page {
+      animation: pageFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes pageFloat {
+      0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); opacity: .7; }
+      50% { transform: translateY(-20px) rotate(calc(var(--r, 0deg) + 10deg)); opacity: 1; }
+    }
+
+    /* ========================================
+       SECTION 5: وانا صغير اناظرلك
+       سيناريو: طفل ينظر للأعلى + نجوم
+    ======================================== */
+    #sec5 {
+      background: 
+        radial-gradient(ellipse at 50% 80%, rgba(236,64,122,.15), transparent 50%),
+        radial-gradient(ellipse at 20% 20%, rgba(255,215,0,.08), transparent 40%),
+        linear-gradient(180deg, #0a0515, var(--ink), var(--wine));
+    }
+
+    .childhood-scene {
+      position: relative;
+      width: min(350px, 90vw);
+      height: min(400px, 95vw);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    /* نجوم في السماء */
+    .childhood-stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+    }
+
+    .child-star {
+      position: absolute;
+      font-size: 1.2rem;
+      opacity: 0;
+    }
+
+    #sec5.active .child-star {
+      animation: starTwinkle 2s ease-in-out infinite;
+    }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: .3; transform: scale(.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* الطفل */
+    .child-figure {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s var(--ease) .3s;
+    }
+
+    #sec5.active .child-figure {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .child-body {
+      width: 60px;
+      height: 100px;
+      background: linear-gradient(180deg, var(--pink-soft), var(--pink));
+      border-radius: 25px 25px 20px 20px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    }
+
+    .child-head {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(180deg, #ffd7b8, #f5c4a3);
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    }
+
+    /* عيون تنظر للأعلى */
+    .child-eyes {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .child-eye {
+      width: 10px;
+      height: 10px;
+      background: #333;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .child-eye::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 5px;
+      background: #333;
+      border-radius: 50%;
+    }
+
+    /* قلب صغير فوق الطفل */
+    .child-heart {
+      position: absolute;
+      top: -80px;
+      font-size: 2rem;
+      color: var(--red);
+      filter: drop-shadow(0 0 15px var(--red-glow));
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all .8s var(--ease-bounce) 1s;
+    }
+
+    #sec5.active .child-heart {
+      opacity: 1;
+      transform: translateY(0);
+      animation: childHeartFloat 2s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes childHeartFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ========================================
+       SECTION 6: واتابع كل خطواتك
+       سيناريو: خطوات مع قلوب
+    ======================================== */
+    #sec6 {
+      background: 
+        radial-gradient(ellipse at 50% 70%, rgba(236,64,122,.12), transparent 50%),
+        linear-gradient(180deg, var(--deep), var(--ink));
+    }
+
+    .footsteps-scene {
+      position: relative;
+      width: min(300px, 85vw);
+      height: min(400px, 90vw);
+    }
+
+    .footstep {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    #sec6.active .footstep {
+      animation: stepAppear .6s var(--ease-bounce) forwards;
+    }
+
+    @keyframes stepAppear {
+      to { opacity: .8; transform: scale(1) rotate(var(--r, 0deg)); }
+    }
+
+    .step-heart {
+      position: absolute;
+      font-size: 1rem;
+      color: var(--red);
+      opacity: 0;
+    }
+
+    #sec6.active .step-heart {
+      animation: stepHeartPop .5s var(--ease-bounce) forwards;
+    }
+
+    @keyframes stepHeartPop {
+      0% { opacity: 0; transform: scale(0) translateY(0); }
+      100% { opacity: 1; transform: scale(1) translateY(-10px); }
+    }
+
+    /* ========================================
+       SECTION 7: وانت تبتسم لي
+       سيناريو: وجه مبتسم كبير
+    ======================================== */
+    #sec7 {
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(255,215,0,.15), transparent 50%),
+        linear-gradient(180deg, var(--wine), var(--ink));
+    }
+
+    .smile-scene {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .smile-face {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+      border-radius: 50%;
+      box-shadow: 
+        0 30px 80px rgba(0,0,0,.4),
+        inset 0 0 50px rgba(255,255,255,.05);
+      opacity: 0;
+      transform: scale(.8);
+      transition: all 1s var(--ease-bounce);
+    }
+
+    #sec7.active .smile-face {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .smile-eyes {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 50px;
+    }
+
+    .smile-eye {
+      width: 20px;
+      height: 25px;
+      background: #333;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    /* عيون سعيدة */
+    .smile-eye::after {
+      content: '✨';
+      position: absolute;
+      top: 2px;
+      right: -7x;
+      font-size: .8rem;
+    }
+
+    .smile-mouth {
+      position: absolute;
+      bottom: 28%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 40px;
+      border: 5px solid #333;
+      border-top: none;
+      border-radius: 0 0 80px 80px;
+      transition: all 1s var(--ease) .5s;
+    }
+
+    /* هالة سعادة */
+    .smile-glow {
+      position: absolute;
+      inset: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,215,0,.2), transparent 70%);
+      opacity: 0;
+      transition: opacity 1s var(--ease) .3s;
+    }
+
+    #sec7.active .smile-glow {
+      opacity: 1;
+      animation: smileGlowPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes smileGlowPulse {
+      0%, 100% { transform: scale(1); opacity: .5; }
+      50% { transform: scale(1.1); opacity: .8; }
+    }
+
+    /* قلوب حول الابتسامة */
+    .smile-hearts {
+      position: absolute;
+      inset: -50px;
+    }
+
+    .smile-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      color: var(--red);
+      opacity: 0;
+    }
+
+    #sec7.active .smile-heart {
+      animation: smileHeartPop .8s var(--ease-bounce) forwards;
+    }
+
+    @keyframes smileHeartPop {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ========================================
+       SECTION 8: ولا تدري بمدى حبي
+       سيناريو: قلب ضخم مع عداد الحب
+    ======================================== */
+    #sec8 {
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(229,57,53,.25), transparent 50%),
+        linear-gradient(180deg, var(--deep), var(--wine));
+    }
+
+    .love-meter-scene {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .giant-heart {
+      position: relative;
+      font-size: clamp(8rem, 25vw, 12rem);
+      color: var(--red);
+      filter: drop-shadow(0 0 60px var(--red-glow));
+      opacity: 0;
+      transform: scale(.5);
+      transition: all 1s var(--ease-bounce);
+    }
+
+    #sec8.active .giant-heart {
+      opacity: 1;
+      transform: scale(1);
+      animation: giantHeartBeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes giantHeartBeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.1); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.08); }
+    }
+
+    /* عداد الحب */
+    .love-meter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .8s var(--ease) .5s;
+    }
+
+    #sec8.active .love-meter {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .meter-label {
+      font-size: .9rem;
+      color: rgba(255,255,255,.6);
+    }
+
+    .meter-bar {
+      width: 200px;
+      height: 12px;
+      background: rgba(255,255,255,.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--pink), var(--red), var(--gold));
+      border-radius: 6px;
+      transition: width 2s var(--ease) .8s;
+    }
+
+    #sec8.active .meter-fill {
+      width: 100%;
+    }
+
+    .meter-value {
+      font-family: var(--font-poetic);
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .meter-infinity {
+      font-size: 2rem;
+      color: var(--gold);
+      filter: drop-shadow(0 0 20px var(--gold-glow));
+      animation: infinityPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes infinityPulse {
+      0%, 100% { transform: scale(1); opacity: .7; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* ========================================
+       SECTION 9: وكنت اتعمد النظرة
+       سيناريو: عينان تنظران + خطوط التركيز
+    ======================================== */
+    #sec9 {
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(156,39,176,.12), transparent 50%),
+        linear-gradient(180deg, var(--ink), var(--deep));
+    }
+
+    .gaze-scene {
+      position: relative;
+      width: min(300px, 80vw);
+      height: min(200px, 50vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eyes-container {
+      display: flex;
+      gap: 40px;
+      opacity: 0;
+      transform: scale(.8);
+      transition: all 1s var(--ease-bounce);
+    }
+
+    #sec9.active .eyes-container {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gaze-eye {
+      position: relative;
+      width: 80px;
+      height: 50px;
+      background: linear-gradient(180deg, #fff, #f0f0f0);
+      border-radius: 50%;
+      box-shadow: 0 10px 40px rgba(0,0,0,.3);
+      overflow: hidden;
+    }
+
+    .gaze-iris {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 35px;
+      height: 35px;
+      background: radial-gradient(circle at 30% 30%, #8b4513, #4a2000);
+      border-radius: 50%;
+      transition: all .3s var(--ease);
+    }
+
+    .gaze-pupil {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    .gaze-pupil::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    /* خطوط التركيز */
+    .focus-lines {
+      position: absolute;
+      inset: -50px;
+      pointer-events: none;
+    }
+
+    .focus-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+      height: 2px;
+      opacity: 0;
+    }
+
+    #sec9.active .focus-line {
+      animation: focusLineAnim 2s ease-out infinite;
+    }
+
+    @keyframes focusLineAnim {
+      0% { opacity: 0; transform: scaleX(0); }
+      50% { opacity: .5; transform: scaleX(1); }
+      100% { opacity: 0; transform: scaleX(0); }
+    }
+
+    /* قلب في العين */
+    .eye-heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: .8rem;
+      color: var(--red);
+      opacity: 0;
+      transition: all .5s var(--ease) 1s;
+    }
+
+    #sec9.active .eye-heart {
+      opacity: 1;
+    }
+
+    /* ========================================
+       SECTION 10: عشان احظى بنظراتك
+       سيناريو: عيون تتبادل النظرات + قلوب
+    ======================================== */
+    #sec10 {
+      background: 
+        radial-gradient(ellipse at 30% 50%, rgba(236,64,122,.15), transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(229,57,53,.15), transparent 50%),
+        linear-gradient(180deg, var(--wine), var(--ink));
+    }
+
+    .mutual-gaze-scene {
+      position: relative;
+      width: min(350px, 90vw);
+      height: min(200px, 50vw);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .gaze-pair {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: all 1s var(--ease);
+    }
+
+    #sec10.active .gaze-pair {
+      opacity: 1;
+    }
+
+    .gaze-pair.left { transform: translateX(-30px); }
+    .gaze-pair.right { transform: translateX(30px); }
+
+    #sec10.active .gaze-pair.left { transform: translateX(0); }
+    #sec10.active .gaze-pair.right { transform: translateX(0); }
+
+    .pair-eye {
+      width: 60px;
+      height: 35px;
+      background: linear-gradient(180deg, #fff, #f0f0f0);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,.3);
+    }
+
+    .pair-iris {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25px;
+      height: 25px;
+      background: radial-gradient(circle at 30% 30%, #8b4513, #4a2000);
+      border-radius: 50%;
+    }
+
+    /* قلوب بين العيون */
+    .between-hearts {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .between-heart {
+      font-size: 1.5rem;
+      color: var(--red);
+      filter: drop-shadow(0 0 10px var(--red-glow));
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    #sec10.active .between-heart {
+      animation: betweenHeartPop .6s var(--ease-bounce) forwards;
+    }
+
+    /* ========================================
+       SECTION 11: وأتشكك من الفرحة
+       سيناريو: شخص سعيد متفاجئ + نجوم وقلوب
+    ======================================== */
+    #sec11 {
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(255,215,0,.15), transparent 50%),
+        radial-gradient(ellipse at 30% 30%, rgba(236,64,122,.1), transparent 40%),
+        linear-gradient(180deg, var(--wine), var(--ink));
+    }
+
+    .happy-scene {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .happy-figure {
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s var(--ease);
+    }
+
+    #sec11.active .happy-figure {
+      opacity: 1;
+      transform: translateY(0);
+      animation: happyBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes happyBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .happy-body {
+      width: 70px;
+      height: 120px;
+      background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+      border-radius: 30px 30px 25px 25px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,.4), 0 0 40px var(--gold-glow);
+    }
+
+    .happy-head {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55px;
+      height: 55px;
+      background: linear-gradient(180deg, #ffd7b8, #f5c4a3);
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    }
+
+    /* وجه سعيد متفاجئ */
+    .happy-face {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .happy-eyes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .happy-eye {
+      width: 12px;
+      height: 12px;
+      background: #333;
+      border-radius: 50%;
+      position: relative;
+      animation: eyeSparkle 1.5s ease-in-out infinite;
+    }
+
+    .happy-eye::after {
+      content: '✨';
+      position: absolute;
+      top: -2px;
+      right: 0px;
+      font-size: .6rem;
+    }
+
+    @keyframes eyeSparkle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* فم مبتسم كبير */
+    .happy-mouth {
+      width: 25px;
+      height: 12px;
+      border: 3px solid #333;
+      border-top: none;
+      border-radius: 0 0 25px 25px;
+      margin: 0 auto;
+      background: rgba(0,0,0,.1);
+    }
+
+    /* خدود وردية */
+    .happy-cheeks {
+      position: absolute;
+      top: 55%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5px;
+    }
+
+    .happy-cheek {
+      width: 6px;
+      height: 8px;
+      background: var(--pink-soft);
+      border-radius: 50%;
+      opacity: .6;
+    }
+
+    /* نجوم وقلوب حول الشخص */
+    .joy-particles {
+      position: absolute;
+      inset: -80px;
+    }
+
+    .joy-particle {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0;
+    }
+
+    #sec11.active .joy-particle {
+      animation: joyFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes joyFloat {
+      0%, 100% { opacity: 0; transform: translateY(0) scale(.8); }
+      50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+    }
+
+    /* أذرع مرفوعة للأعلى */
+    .happy-arms {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .happy-arm {
+      width: 15px;
+      height: 50px;
+      background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+      border-radius: 10px;
+      transform-origin: bottom center;
+    }
+
+    .happy-arm.left {
+      transform: rotate(30deg) translateX(-15px);
+    }
+
+    .happy-arm.right {
+      transform: rotate(-30deg) translateX(15px);
+    }
+
+    /* قلب كبير فوق الرأس */
+    .happy-heart {
+      position: absolute;
+      top: -90px;
+      font-size: 2.5rem;
+      color: var(--red);
+      filter: drop-shadow(0 0 20px var(--red-glow));
+      opacity: 0;
+      transition: all .8s var(--ease-bounce) .5s;
+    }
+
+    #sec11.active .happy-heart {
+      opacity: 1;
+      animation: happyHeartBeat 1s ease-in-out infinite;
+    }
+
+    @keyframes happyHeartBeat {
+      0%, 100% { transform: scale(1) rotate(-5deg); }
+      50% { transform: scale(1.2) rotate(5deg); }
+    }
+
+    /* ========================================
+       SECTION 12: اذا مريت من جبني - النهاية
+       سيناريو: قلبان يلتقيان + الاسم + تهنئة
+    ======================================== */
+    #sec12 {
+      background: 
+        radial-gradient(ellipse at 50% 40%, rgba(229,57,53,.25), transparent 50%),
+        radial-gradient(ellipse at 30% 70%, rgba(255,215,0,.1), transparent 40%),
+        radial-gradient(ellipse at 70% 80%, rgba(236,64,122,.15), transparent 40%),
+        linear-gradient(180deg, var(--wine), #2a0a18, var(--deep));
+    }
+
+    .finale-scene {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    /* قلبان يلتقيان */
+    .hearts-meeting {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .finale-heart {
+      font-size: clamp(4rem, 12vw, 6rem);
+      color: var(--red);
+      filter: drop-shadow(0 0 40px var(--red-glow));
+      opacity: 0;
+      transition: all 1.2s var(--ease-bounce);
+    }
+
+    .finale-heart.left { transform: translateX(50px); }
+    .finale-heart.right { transform: translateX(-50px); }
+
+    #sec12.active .finale-heart {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    #sec12.active .finale-heart.left { transition-delay: 0s; }
+    #sec12.active .finale-heart.right { transition-delay: .3s; }
+
+    /* توهج الالتقاء */
+    .meeting-glow {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255,215,0,.4), var(--red-glow), transparent 70%);
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0;
+      transition: opacity 1s var(--ease) 1s;
+    }
+
+    #sec12.active .meeting-glow {
+      opacity: 1;
+      animation: meetingGlowPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes meetingGlowPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* الاسم */
+    .finale-name {
+      font-family: var(--font-poetic);
+      font-size: clamp(2.5rem, 10vw, 4.5rem);
+      background: linear-gradient(135deg, var(--white), var(--gold), var(--pink-soft), var(--white));
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 60px var(--gold-glow);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s var(--ease) .8s;
+    }
+
+    #sec12.active .finale-name {
+      opacity: 1;
+      transform: translateY(0);
+      animation: finaleNameShine 4s linear infinite 1.5s;
+    }
+
+    @keyframes finaleNameShine {
+      to { background-position: 300% center; }
+    }
+
+    /* رسالة عيد الحب */
+    .valentine-message {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s var(--ease) 1.2s;
+    }
+
+    #sec12.active .valentine-message {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .valentine-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, var(--red), var(--magenta));
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 15px 40px rgba(229,57,53,.4);
+      margin-bottom: 15px;
+    }
+
+    .valentine-wish {
+      font-family: var(--font-poetic);
+      font-size: 1.3rem;
+      color: var(--pink-soft);
+    }
+
+    /* قلوب وورود متطايرة */
+    .finale-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .finale-particle {
+      position: absolute;
+      opacity: 0;
+    }
+
+    #sec12.active .finale-particle {
+      animation: particleFall 6s ease-out infinite;
+    }
+
+    @keyframes particleFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+      10% { opacity: .8; }
+      100% { transform: translateY(500px) rotate(360deg) translateX(var(--drift)); opacity: 0; }
+    }
+
+    /* ===== CREDIT ===== */
+    .credit {
+      position: absolute;
+      bottom: calc(16px + var(--safeBottom));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 24px;
+      border-radius: 50px;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,64,129,.3);
+      font-size: .9rem;
+      color: rgba(255,255,255,.8);
+      box-shadow: 0 15px 50px rgba(0,0,0,.5);
+    }
+
+    .credit a {
+      color: var(--pink-soft);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color .3s;
+    }
+
+    .credit a:hover { color: var(--gold); }
+
+    /* ===== INDICATORS ===== */
+    .auto-indicator {
+      position: fixed;
+      left: 16px;
+      bottom: calc(16px + var(--safeBottom));
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 50px;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,64,129,.2);
+      font-size: .8rem;
+      color: rgba(255,255,255,.7);
+      opacity: 0;
+      transition: opacity .4s var(--ease);
+    }
+
+    .auto-indicator.active { opacity: 1; }
+
+    .auto-indicator .spin {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--red);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .scroll-hint {
+      position: fixed;
+      right: 16px;
+      bottom: calc(16px + var(--safeBottom));
+      z-index: 200;
+      font-size: .85rem;
+      color: rgba(255,255,255,.5);
+      opacity: 0;
+      transition: opacity .5s var(--ease);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    body:not(.locked) .scroll-hint { opacity: 1; }
+
+    .scroll-arrow {
+      animation: scrollBounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 500px) {
+      .verse { font-size: clamp(1.5rem, 5.5vw, 2.5rem); }
+      .calendar { width: 140px; height: 160px; }
+      .letter-paper { padding: 20px 25px; }
+      .headphones { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body class="locked">
+
+  <!-- GATE -->
+  <div id="gate" class="gate">
+    <div class="gate-hearts" id="gateHearts"></div>
+    <div class="gate-card">
+      <div class="gate-date">💝 عيد الحب 14 فبراير</div>
+      <div class="gate-icon">💕</div>
+      <div class="gate-title">رسالة عيد الحب إلى</div>
+      <div class="gate-name" id="gateName">...</div>
+      <div class="gate-subtitle">اضغط لتشغيل الأغنية</div>
+      <button id="startBtn" class="gate-btn">💝 افتح رسالتك</button>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgAudio" preload="auto" loop playsinline>
+    <source src="valentine.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- INDICATORS -->
+  <div class="auto-indicator" id="autoIndicator">
+    <span class="spin"></span>
+    <span>تقليب تلقائي</span>
+  </div>
+  <div class="scroll-hint">
+    <span>اسحب</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+
+  <!-- MAIN -->
+  <main id="story">
+
+    <!-- SEC 1 -->
+    <section id="sec1">
+      <div class="bg-hearts" id="bgHearts1"></div>
+      <div class="valentine-scene">
+        <div class="calendar">
+          <div class="calendar-body">
+            <div class="calendar-header">فبراير</div>
+            <div class="calendar-date">
+              <span class="calendar-day">14</span>
+              <span class="calendar-label">عيد الحب</span>
+            </div>
+            <span class="calendar-hearts">💕</span>
+          </div>
+        </div>
+        <div class="letter-paper">
+          <div class="letter-lines"></div>
+          <div class="letter-text">
+            <span data-name></span>الغالية<br>
+            بكتب لك من قلبي...<span class="writing-cursor"></span>
+          </div>
+          <span class="letter-heart">❤️</span>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">بعيد الحب ابكتب لك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 2 -->
+    <section id="sec2">
+      <div class="bg-hearts" id="bgHearts2"></div>
+      <div class="audio-scene">
+        <div class="headphones">
+          <div class="hp-band"></div>
+          <div class="hp-ear left"></div>
+          <div class="hp-ear right"></div>
+        </div>
+        <div class="sound-waves">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">واسمعك الذي فاتك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 3 -->
+    <section id="sec3">
+      <div class="bg-hearts" id="bgHearts3"></div>
+      <div class="speech-scene">
+        <div class="speech-bubble bubble-1">💬</div>
+        <div class="speech-bubble bubble-2">💭</div>
+        <div class="speech-bubble bubble-3">💗</div>
+        <div class="speech-bubble bubble-4">✨</div>
+        <div class="speaker-icon">🗣️</div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">واتكلم واشرحلك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 4 -->
+    <section id="sec4">
+      <div class="bg-hearts" id="bgHearts4"></div>
+      <div class="heart-book-scene">
+        <div class="heart-book">
+          <div class="story-pages" id="storyPages"></div>
+          <div class="book-heart">❤️</div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">حكاية عاشها كلبي</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 5 -->
+    <section id="sec5">
+      <div class="bg-hearts" id="bgHearts5"></div>
+      <div class="childhood-scene">
+        <div class="childhood-stars" id="childStars"></div>
+        <div class="child-figure">
+          <span class="child-heart">❤️</span>
+          <div class="child-body">
+            <div class="child-head">
+              <div class="child-eyes">
+                <div class="child-eye"></div>
+                <div class="child-eye"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">وانا صغير اناظرلك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 6 -->
+    <section id="sec6">
+      <div class="bg-hearts" id="bgHearts6"></div>
+      <div class="footsteps-scene" id="footstepsScene"></div>
+      <div class="text-wrap">
+        <h1 class="verse">واتابع كل خطواتك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 7 -->
+    <section id="sec7">
+      <div class="bg-hearts" id="bgHearts7"></div>
+      <div class="smile-scene">
+        <div class="smile-face">
+          <div class="smile-glow"></div>
+          <div class="smile-eyes">
+            <div class="smile-eye"></div>
+            <div class="smile-eye"></div>
+          </div>
+          <div class="smile-mouth"></div>
+        </div>
+        <div class="smile-hearts" id="smileHearts"></div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">وانت تبتسم لي</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 8 -->
+    <section id="sec8">
+      <div class="bg-hearts" id="bgHearts8"></div>
+      <div class="love-meter-scene">
+        <div class="giant-heart">❤️</div>
+        <div class="love-meter">
+          <span class="meter-label">مقياس الحب</span>
+          <div class="meter-bar"><div class="meter-fill"></div></div>
+          <span class="meter-infinity">∞</span>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">ولا تدري بمدى حبي</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 9 -->
+    <section id="sec9">
+      <div class="bg-hearts" id="bgHearts9"></div>
+      <div class="gaze-scene">
+        <div class="focus-lines" id="focusLines"></div>
+        <div class="eyes-container">
+          <div class="gaze-eye">
+            <div class="gaze-iris">
+              <div class="gaze-pupil"></div>
+            </div>
+            <span class="eye-heart">❤️</span>
+          </div>
+          <div class="gaze-eye">
+            <div class="gaze-iris">
+              <div class="gaze-pupil"></div>
+            </div>
+            <span class="eye-heart">❤️</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">وكنت اتعمد النظرة</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 10 -->
+    <section id="sec10">
+      <div class="bg-hearts" id="bgHearts10"></div>
+      <div class="mutual-gaze-scene">
+        <div class="gaze-pair left">
+          <div class="pair-eye"><div class="pair-iris"></div></div>
+          <div class="pair-eye"><div class="pair-iris"></div></div>
+        </div>
+        <div class="between-hearts" id="betweenHearts"></div>
+        <div class="gaze-pair right">
+          <div class="pair-eye"><div class="pair-iris"></div></div>
+          <div class="pair-eye"><div class="pair-iris"></div></div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">عشان احظى بنظراتك</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 11 -->
+    <section id="sec11">
+      <div class="bg-hearts" id="bgHearts11"></div>
+      <div class="happy-scene">
+        <div class="happy-figure">
+          <div class="joy-particles" id="joyParticles"></div>
+          <span class="happy-heart">❤️</span>
+          <div class="happy-body">
+            <div class="happy-arms">
+              <div class="happy-arm left"></div>
+              <div class="happy-arm right"></div>
+            </div>
+            <div class="happy-head">
+              <div class="happy-face">
+                <div class="happy-eyes">
+                  <div class="happy-eye"></div>
+                  <div class="happy-eye"></div>
+                </div>
+                <div class="happy-mouth"></div>
+                <div class="happy-cheeks">
+                  <div class="happy-cheek"></div>
+                  <div class="happy-cheek"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">وأتشكك من الفرحة</h1>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+    <!-- SEC 12 - FINALE -->
+    <section id="sec12">
+      <div class="finale-particles" id="finaleParticles"></div>
+      <div class="finale-scene">
+        <div class="hearts-meeting">
+          <div class="meeting-glow"></div>
+          <span class="finale-heart left">❤️</span>
+          <span class="finale-heart right">❤️</span>
+        </div>
+        <div class="finale-name" data-name></div>
+        <div class="valentine-message">
+          <div class="valentine-badge">💝 Happy Valentine's Day 💝</div>
+          <div class="valentine-wish"> بمناسبة عيد الحب حاب اهيمج
+ يا كل حبي و مشاعري 
+هاي اهداء من معشوقج يوسف الى معشوقته ملاك 
+اهداء بسيط حبيت اكلج 
+عيد الحب وياج غير 
+عيد الحب صار صدك عيد الحب بحبي الج 
+اشكرج على كل الايام 
+الي عشتها وياج و 
+ان شاء الله يكون اول عيد حب وياج 
+و مو الاخير كل عام و انتِ حبي 
+عيد الحب مو بس بهل يوم 
+عيد الحب بالنسبه الي هو كل يوم وياج
+ اهيمج يروحي 
+و الله يحفظج الي 
+اشكرج على كلشي 
+يا كُل كُلي و يا مي عيوني 
+يا نبضي و 
+دم شراييني كل عام و انتِ حبي</div>
+        </div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="verse">اهيمج يلوعي🥹🩷 </h1>
+      </div>
+      <div class="credit">
+        <span>اهداء من يوسف الى ملاكه</span>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </section>
+
+  </main>
+
+  <script>
+    // ===== GET NAME FROM URL =====
+    function getBelovedName() {
+      const params = new URLSearchParams(window.location.search);
+      return (params.get('love') || params.get('name') || 'MALACK').trim();
+    }
+
+    const belovedName = getBelovedName();
+
+    // ===== ELEMENTS =====
+    const gate = document.getElementById('gate');
+    const gateName = document.getElementById('gateName');
+    const startBtn = document.getElementById('startBtn');
+    const bgAudio = document.getElementById('bgAudio');
+    const storyMain = document.getElementById('story');
+    const autoIndicator = document.getElementById('autoIndicator');
+    const sections = document.querySelectorAll('section');
+
+    // Set name
+    gateName.textContent = belovedName;
+    document.querySelectorAll('[data-name]').forEach(el => {
+      el.textContent = belovedName;
+    });
+
+    // ===== STATE =====
+    let autoScrollEnabled = true;
+    let currentSection = 0;
+    let isAutoScrolling = false;
+    let userScrollTimeout = null;
+
+    // ===== TIMESTAMPS =====
+    const timestamps = [0, 3.6, 7.2, 10.9, 14.7, 18.8, 22.7, 26.5, 30.2, 34.4, 38.1, 42];
+
+    // ===== INTERSECTION OBSERVER =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // ===== GENERATE ELEMENTS =====
+    function generateElements() {
+      // Gate hearts
+      const gateHearts = document.getElementById('gateHearts');
+      const heartEmojis = ['❤️', '💕', '💗', '💖', '💝', '🌹'];
+      for (let i = 0; i < 15; i++) {
+        const h = document.createElement('span');
+        h.className = 'gate-heart';
+        h.textContent = heartEmojis[i % heartEmojis.length];
+        h.style.top = (Math.random() * 100) + '%';
+        h.style.left = (Math.random() * 100) + '%';
+        h.style.animationDelay = (Math.random() * 5) + 's';
+        h.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+        gateHearts.appendChild(h);
+      }
+
+      // Background hearts for all sections
+      for (let i = 1; i <= 11; i++) {
+        const container = document.getElementById('bgHearts' + i);
+        if (container) {
+          for (let j = 0; j < 8; j++) {
+            const h = document.createElement('span');
+            h.className = 'bg-heart';
+            h.textContent = '❤️';
+            h.style.top = (Math.random() * 80 + 10) + '%';
+            h.style.left = (Math.random() * 80 + 10) + '%';
+            h.style.animationDelay = (Math.random() * 3) + 's';
+            h.style.fontSize = (0.8 + Math.random() * 1) + 'rem';
+            container.appendChild(h);
+          }
+        }
+      }
+
+      // Story pages - sec4
+      const storyPages = document.getElementById('storyPages');
+      const pagePositions = [
+        { top: '10%', left: '10%', r: '-15deg' },
+        { top: '15%', right: '15%', r: '20deg' },
+        { top: '60%', left: '5%', r: '-10deg' },
+        { top: '65%', right: '10%', r: '15deg' },
+        { bottom: '10%', left: '20%', r: '-5deg' }
+      ];
+      pagePositions.forEach((pos, i) => {
+        const p = document.createElement('div');
+        p.className = 'story-page';
+        Object.keys(pos).forEach(k => {
+          if (k === 'r') p.style.setProperty('--r', pos[k]);
+          else p.style[k] = pos[k];
+        });
+        p.style.animationDelay = (i * 0.3) + 's';
+        storyPages.appendChild(p);
+      });
+
+      // Child stars - sec5
+      const childStars = document.getElementById('childStars');
+      for (let i = 0; i < 12; i++) {
+        const s = document.createElement('span');
+        s.className = 'child-star';
+        s.textContent = '⭐';
+        s.style.top = (Math.random() * 60) + '%';
+        s.style.left = (Math.random() * 100) + '%';
+        s.style.animationDelay = (Math.random() * 2) + 's';
+        childStars.appendChild(s);
+      }
+
+      // Footsteps - sec6
+      const footstepsScene = document.getElementById('footstepsScene');
+      const steps = [
+        { top: '10%', left: '20%', r: '-30deg' },
+        { top: '25%', left: '50%', r: '-25deg' },
+        { top: '40%', left: '30%', r: '-35deg' },
+        { top: '55%', left: '60%', r: '-20deg' },
+        { top: '70%', left: '40%', r: '-30deg' },
+        { top: '85%', left: '70%', r: '-25deg' }
+      ];
+      steps.forEach((pos, i) => {
+        const f = document.createElement('span');
+        f.className = 'footstep';
+        f.textContent = '👣';
+        f.style.top = pos.top;
+        f.style.left = pos.left;
+        f.style.setProperty('--r', pos.r);
+        f.style.animationDelay = (i * 0.2) + 's';
+        footstepsScene.appendChild(f);
+
+        const h = document.createElement('span');
+        h.className = 'step-heart';
+        h.textContent = '❤️';
+        h.style.top = `calc(${pos.top} - 20px)`;
+        h.style.left = `calc(${pos.left} + 20px)`;
+        h.style.animationDelay = (i * 0.2 + 0.3) + 's';
+        footstepsScene.appendChild(h);
+      });
+
+      // Smile hearts - sec7
+      const smileHearts = document.getElementById('smileHearts');
+      const smileHeartPos = [
+        { top: '0', left: '50%' },
+        { top: '20%', left: '10%' },
+        { top: '20%', right: '10%' },
+        { bottom: '20%', left: '15%' },
+        { bottom: '20%', right: '15%' }
+      ];
+      smileHeartPos.forEach((pos, i) => {
+        const h = document.createElement('span');
+        h.className = 'smile-heart';
+        h.textContent = '❤️';
+        Object.keys(pos).forEach(k => h.style[k] = pos[k]);
+        h.style.transform = 'scale(0)';
+        h.style.animationDelay = (0.5 + i * 0.15) + 's';
+        smileHearts.appendChild(h);
+      });
+
+      // Focus lines - sec9
+      const focusLines = document.getElementById('focusLines');
+      for (let i = 0; i < 5; i++) {
+        const l = document.createElement('div');
+        l.className = 'focus-line';
+        l.style.top = (20 + i * 15) + '%';
+        l.style.left = '10%';
+        l.style.width = '80%';
+        l.style.animationDelay = (i * 0.2) + 's';
+        focusLines.appendChild(l);
+      }
+
+      // Between hearts - sec10
+      const betweenHearts = document.getElementById('betweenHearts');
+      for (let i = 0; i < 3; i++) {
+        const h = document.createElement('span');
+        h.className = 'between-heart';
+        h.textContent = '❤️';
+        h.style.animationDelay = (0.5 + i * 0.2) + 's';
+        betweenHearts.appendChild(h);
+      }
+
+      // Joy particles - sec11
+      const joyParticles = document.getElementById('joyParticles');
+      const joyEmojis = ['✨', '⭐', '💫', '🌟', '❤️', '💕'];
+      const joyPositions = [
+        { top: '-30px', left: '-50px' },
+        { top: '-40px', right: '-40px' },
+        { top: '0', left: '-60px' },
+        { top: '10%', right: '-55px' },
+        { top: '40%', left: '-50px' },
+        { top: '50%', right: '-45px' },
+        { bottom: '20%', left: '-40px' },
+        { bottom: '10%', right: '-50px' }
+      ];
+      joyPositions.forEach((pos, i) => {
+        const p = document.createElement('span');
+        p.className = 'joy-particle';
+        p.textContent = joyEmojis[i % joyEmojis.length];
+        Object.keys(pos).forEach(k => p.style[k] = pos[k]);
+        p.style.animationDelay = (i * 0.2) + 's';
+        joyParticles.appendChild(p);
+      });
+
+      // Finale particles
+      const finaleParticles = document.getElementById('finaleParticles');
+      const particles = ['❤️', '💕', '🌹', '💗', '✨', '💖'];
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement('span');
+        p.className = 'finale-particle';
+        p.textContent = particles[i % particles.length];
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+        p.style.setProperty('--drift', (Math.random() * 150 - 75) + 'px');
+        p.style.animationDelay = (Math.random() * 6) + 's';
+        finaleParticles.appendChild(p);
+      }
+    }
+
+    // ===== START =====
+    startBtn.addEventListener('click', startExperience);
+
+    async function startExperience() {
+      if (bgAudio) {
+        bgAudio.volume = 0.7;
+        try { await bgAudio.play(); } catch(e) { console.log('Audio play failed:', e); }
+      }
+
+      gate.classList.add('hide');
+      setTimeout(() => gate.remove(), 1000);
+
+      document.body.classList.remove('locked');
+      autoScrollEnabled = true;
+      autoIndicator.classList.add('active');
+
+      generateElements();
+    }
+
+    // ===== AUTO-SCROLL =====
+    function getSectionForTime(time) {
+      for (let i = timestamps.length - 1; i >= 0; i--) {
+        if (time >= timestamps[i]) return i;
+      }
+      return 0;
+    }
+
+    function scrollToSection(index) {
+      if (index < 0 || index >= sections.length) return;
+      isAutoScrolling = true;
+      sections[index].scrollIntoView({ behavior: 'smooth' });
+      currentSection = index;
+      setTimeout(() => { isAutoScrolling = false; }, 900);
+    }
+
+    if (bgAudio) {
+      bgAudio.addEventListener('timeupdate', () => {
+        if (!autoScrollEnabled) return;
+        const target = getSectionForTime(bgAudio.currentTime);
+        if (target !== currentSection) scrollToSection(target);
+      });
+    }
+
+    // ===== MANUAL SCROLL =====
+    let scrollTimer;
+    storyMain.addEventListener('scroll', () => {
+      if (isAutoScrolling) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        autoScrollEnabled = false;
+        autoIndicator.classList.remove('active');
+
+        clearTimeout(userScrollTimeout);
+        userScrollTimeout = setTimeout(() => {
+          autoScrollEnabled = true;
+          autoIndicator.classList.add('active');
+          if (bgAudio) currentSection = getSectionForTime(bgAudio.currentTime);
+        }, 6000);
+      }, 100);
+    }, { passive: true });
+  </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"155828745e784d679b1c8460fd23d29c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
